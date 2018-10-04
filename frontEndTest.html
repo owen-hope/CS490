@@ -1,0 +1,27 @@
+<html>
+<body>
+        <h1>hello</h1>
+
+        <button type="button" onclick="loadDoc()">Request Data</button>
+        <p id="demo"></p>
+
+        <script>
+                function loadDoc() {
+                        var xmlhttp = new XMLHttpRequest();
+                        xmlhttp.onreadystatechange = function() {
+                                if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                                        var data = xmlhttp.responseText;
+                                        var myObj = JSON.parse(data);
+                                        document.getElementById("demo").innerHTML = myObj.login;
+                                }
+                        };
+                        //ENTER THE NAME OF YOUR PHP FILE BELOW IN A STRING
+                        xmlhttp.open("POST", <your php filename>, true);
+                        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        //THE username and password would be equal to whatever values are typed in
+                        xmlhttp.send("username=test&password=root");
+                        //xmlhttp.send();
+                }
+        </script>
+</body>
+</html>

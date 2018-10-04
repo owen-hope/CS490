@@ -1,0 +1,226 @@
+<!-- NJIT default user homepage version 20070214
+            background-image: url("http://media1.santabanta.com/full1/Creative/Abstract/abstract-377v.jpg");
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:color="http://www.w3.org/1999/xhtml" xmlns:http="http://www.w3.org/1999/xhtml"
+      xmlns:font-size="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Helvetica, Helvetica, sans-serif;
+            background-repeat: no-repeat;
+            background-size: 100% 115%;}
+
+        .responsive {
+            width: 100%;
+            height: 100%;}
+
+
+        form { border: 3px solid #f1f1f1;
+            margin-left: auto;
+            margin-right: auto;
+            height: 500px;
+            width: 500px;
+            backdrop-filter: blur(3px);}
+
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;}
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;}
+
+        button:hover {
+            opacity: 0.8;}
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;}
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;}
+
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;}}
+
+
+
+    </style>
+</head>
+
+
+
+
+
+<body>
+<img class="responsive">
+
+<h2 style="color:white; font-size:3vw;">Login Form</h2>
+<p id="backendInfo"></p>
+<p id="njitInfo"></p>
+
+<h1 style="font-size:1vw; color:white;"> Welcome, this is an interactive webpage meant to display many different features for a website
+</h1>
+
+<form  id="myForm" name="myyForm">
+    <div class="imgcontainer">
+        <img src="http://www.coolwallpapers.me/download/1018/Panda_Colors_Artwork.jpg/" alt="Avatar" class="avatar">
+
+    </div>
+    <div class="container">
+        <label><b style="font-size:2vw;">Username</b></label>
+        <input type="text" id="ID_USERNAME" name="myUser" style="font-size:1.3vw;" placeholder="Enter Username" required>
+
+        <label><b style="font-size:2vw;">Password</b></label>
+        <input type="password" id="ID_PASSWORD" name="myPass" style="font-size:1.3vw;" placeholder="Enter Password" required>
+
+        <button type="button" onclick="myFunction();" style="font-size:2vw;">Submit</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember" > Please master, remember my username
+        </label>
+    </div>
+</form>
+</div>
+
+
+
+
+
+
+
+<script>
+    function myFunction() {
+        var myUser = document.getElementById("ID_USERNAME").value;
+        var myPass = document.getElementById("ID_PASSWORD").value;
+        //document.getElementById("demo").innerHTML = myUser + myPass;
+
+
+        var xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function() {
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                //document.getElementById("demo").innerHTML = xmlhttp.responseText;
+                var data = xmlhttp.responseText;
+                var myObj = JSON.parse(data);
+                document.getElementById("backendInfo").innerHTML = myObj.login;
+                document.getElementById("njitInfo").innerHTML = myObj.njitInfo;
+            }
+        };
+        xmlhttp.open("POST", "Front.php", true);
+        xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xmlhttp.send("myUser=" + myUser + "&myPass=" + myPass);                                                  // Actually execute the request
+        //console.log("myUser=" + myUser + "&myPass=" + myPass);                                                  // Actually execute the request
+        //document.getElementById("demo").innerHTML = "processing...";
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+.background-image{
+position: fixed;
+left: 0;
+right: 0;
+z-index: 1;
+
+display: block;
+width: 1200px;
+height: 800px;
+
+-webkit-filter: blur(5px);
+-moz-filter: blur(5px);
+-o-filter: blur(5px);
+-ms-filter: blur(5px);
+filter: blur(5px);
+}
+
+
+.img {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}
+
+
+
+
+<div class="background-image"></div>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+.background-image{
+position: fixed;
+left: 0;
+right: 0;
+z-index: 1;
+
+display: block;
+width: 1200px;
+height: 800px;
+
+-webkit-filter: blur(5px);
+-moz-filter: blur(5px);
+-o-filter: blur(5px);
+-ms-filter: blur(5px);
+filter: blur(5px);
+}
+
+
+.img {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}
+
+
+
+
+<div class="background-image"></div>
+-->

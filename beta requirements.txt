@@ -1,0 +1,41 @@
+instructor can login and create a new question to a question bank
+	need page split, half has question bank (questions already there) other half create the new question
+	test bank has 3 levels easy medium hard
+	
+instructor can login and select questions to make up a test
+	Here is where you assign the points
+	
+Student logs in and takes the exam
+
+once student logs out the instructor goes in to release grades and modify the grades and add comments
+
+There needs to be feedback on the problems
+
+---------------------------------WRITTEN BY JONARD------------------------------------
+Assignment grading system
+
+Instructor and 2 students (as users)
+
+The instructor can login and input Questions to the question bank.
+
+The instructor can login and select questions to make up a test.
+
+ 
+
+There will probably be some form to fill out. Probably spilt in 2: The relevant questions and the current questions. Maybe we will categorize it by easy medium and hard. Or, maybe we can categorize it by type, subject, etc.
+
+The instructor should also be able to modify the grading whenever he/she wants, and add comments for description. They should also be able to publish everything afterwards.
+
+The user/student, should be able to login and review the information. They will be restricted
+
+ 
+
+Instructor to Create questions
+
+Instructor to Select question to create the exam
+
+User can take the exam
+
+Instructor can grade it, tweak it, write a description,
+
+And the user can review it
